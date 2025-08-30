@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: myplants-app
+  namespace: myplants # <-- ADD THIS
 spec:
   selector:
     matchLabels:
@@ -14,6 +15,5 @@ spec:
       containers:
         - name: myplants-app
           image: 69966/earthdx:78
-          #image: nginx
           ports:
             - containerPort: 80
